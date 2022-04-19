@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Um site que simula um cronômetro">
     <link rel="icon" href="./assets/images/Favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <title>Clocker</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
             <img src="./assets/images/Logo.svg" alt="clocker-logo">
         </div>
         <div class="display">
-            <span class="schedule">00:00</span>
+            <span class="schedule"><span class="minutes">00</span><span class="two-points">:</span><span class="seconds">00</span></span>
         </div>
         <div class="controls">
             <button class="control" type="start">INICIAR</button>
@@ -23,5 +23,6 @@
             <button class="control" type="end">ZERAR</button>
         </div>
     </div>
+    <script type="module" src="./assets/scripts/main.js"></script>
 </body>
 </html>
