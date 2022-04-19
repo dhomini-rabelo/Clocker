@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #2B3C54;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+#container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    padding: 5rem 0;
+}
+
+.logo img{
+    display: block;
+    margin: 0 auto;
+}
+
+.display {
+    text-align: center;
+}
+
+.schedule {
+    font-size: 15rem;
+}
+
+.controls {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.control {
+    margin-top: 1rem;
+    font-size: 2rem;
+    padding: 1.2rem 1rem;
+    background-color: transparent;
+    border: 0.8px solid #B1C5E2;
+    border-radius: 8px;
+    color: #4E84D4;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    width: 150px;
+}
+
+@media(max-width: 600px){
+    .schedule {
+        font-size: 8rem;
+    }
+    
+    .control {
+        font-size: 1rem;
+        width: 100px;
+    }
+}
+
+@media(max-width: 400px){
+    .schedule {
+        font-size: 6rem;
+    }
+
+    .logo img {
+        width: 84%
+    }
+
+    .control {
+        font-size: 0.8rem;
+        width: 80px;
+        margin-inline: 0.1rem;
+    }
+}
+
+@media(max-width: 275px){
+    .schedule {
+        font-size: 4rem;
+    }
+    
+    .control {
+        font-size: 0.7rem;
+    }
+}
