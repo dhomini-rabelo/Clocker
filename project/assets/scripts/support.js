@@ -1,4 +1,4 @@
-function useState(address) {
+export function useState(address) {
     let webElement = document.querySelector(address)
     return [
         webElement.innerHTML, 

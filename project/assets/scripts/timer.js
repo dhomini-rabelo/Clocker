@@ -1,18 +1,55 @@
 import { useState } from './support.js'
 
-const minutes = document.querySelector('.minutes')
-const seconds = document.querySelector('.seconds')
 
-document.querySelector('button[type="start"]').addEventListener('click', startTimer)
+class Timer {
 
-function startTimer() {
-    updateSeconds(seconds.value)
+    constructor (minutesAddress, secondsAddress){
+        let [minutes, setMinutes] = useState(minutesAddress)
+        let [seconds, setSeconds] = useState(secondsAddress)
+        this.minutes = minutes
+        this.setMinutes = setMinutes
+        this.seconds = seconds
+        this.setSeconds = setSeconds
+    }
+
+    start = () => {
+        this.interval = setInterval(this.updateTimer, 1000)
+    }
+
+    stop = () => {
+        if (this.interval){
+            clearInterval(this.interval)
+        }
+    }
+
+    end = () => {
+        this.stop()
+        this.seconds = this.setSeconds('00')
+        this.minutes = this.setMinutes('00')
+    }
+
+    updateTimer = () => {
+        let currentSeconds = Number(this.seconds)
+        let currentMinutes = Number(this.minutes)
+
+        if(currentSeconds < 59) {
+            this.updateSeconds(currentSeconds)
+        } else if(currentSeconds === 59) {
+            this.updateMinutes(currentMinutes)
+        }
+    }
+
+    updateSeconds = (currentSeconds) => {
+        this.seconds = this.setSeconds(this.adaptTimeNumber(currentSeconds + 1))
+    }
+
+    updateMinutes = (currentMinutes) => {
+        this.minutes = this.setMinutes(this.adaptTimeNumber(currentMinutes + 1))
+        this.seconds = this.setSeconds('00')
+    }
+
+    adaptTimeNumber = (timeNumber) => timeNumber < 10 ? `0${timeNumber}` : timeNumber
 }
 
-function updateSeconds(currentSeconds) {
 
-}
-
-function renderBlock(type) {
-
-}
+export default Timer
