@@ -56,6 +56,7 @@ body {
     color: #4E84D4;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     width: 150px;
+    cursor: pointer;
 }
 
 @media(max-width: 600px){
