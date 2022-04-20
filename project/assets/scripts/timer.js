@@ -10,15 +10,20 @@ class Timer {
         this.setMinutes = setMinutes
         this.seconds = seconds
         this.setSeconds = setSeconds
+        this.isActive = false
     }
 
     start = () => {
-        this.interval = setInterval(this.updateTimer, 1000)
+        if (!(this.isActive)){
+            this.interval = setInterval(this.updateTimer, 1000)
+            this.isActive = true
+        }
     }
 
     stop = () => {
-        if (this.interval){
+        if (this.isActive){
             clearInterval(this.interval)
+            this.isActive = false
         }
     }
 
