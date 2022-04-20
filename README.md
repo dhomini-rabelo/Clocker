@@ -5,6 +5,8 @@
 <a href="#show">Veja o projeto</a>
 </p>
 
+<br>
+<h2>Sobre</h2>
 <p>Um site para cronometrar tempo usando javascript, acesse em: <a href="https://clockerjs.netlify.app/">https://clockerjs.netlify.app/</a></p>
 
 <br>
