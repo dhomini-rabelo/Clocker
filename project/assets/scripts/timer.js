@@ -29,8 +29,8 @@ class Timer {
 
     end = () => {
         this.stop()
-        this.seconds = this.setSeconds('00')
-        this.minutes = this.setMinutes('00')
+        this.setSeconds('00')
+        this.setMinutes('00')
     }
 
     updateTimer = () => {
@@ -45,12 +45,12 @@ class Timer {
     }
 
     updateSeconds = (currentSeconds) => {
-        this.seconds = this.setSeconds(this.adaptTimeNumber(currentSeconds + 1))
+        this.setSeconds(this.adaptTimeNumber(currentSeconds + 1))
     }
 
     updateMinutes = (currentMinutes) => {
-        this.minutes = this.setMinutes(this.adaptTimeNumber(currentMinutes + 1))
-        this.seconds = this.setSeconds('00')
+        this.setMinutes(this.adaptTimeNumber(currentMinutes + 1))
+        this.setSeconds('00')
     }
 
     adaptTimeNumber = (timeNumber) => timeNumber < 10 ? `0${timeNumber}` : timeNumber
